@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecular Descriptors Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input {
+            padding: 8px;
+            font-size: 1rem;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Molecular Descriptors Input Form</h2>
+
+
+    'CIC0', 'SM1_DzZ', 'GATS1i', 'NdsCH',  'NdssC', 'MLOGP'
+
+    <form action="/predict" method="POST">
+        <label for="CIC0">CIC0 (float):</label>
+        <input type="number" id="CIC0" name="CIC0" step="any" required>
+
+        <label for="SM1_DzZ">SM1_DzZ (float):</label>
+        <input type="number" id="SM1_DzZ" name="SM1_DzZ" step="any" required>
+
+        <label for="GATS1i">GATS1i (float):</label>
+        <input type="number" id="GATS1i" name="GATS1i" step="any" required>
+
+        <label for="NdsCH">NdsCH (integer):</label>
+        <input type="number" id="NdsCH" name="NdsCH" step="1" required>
+
+        <label for="NdssC">NdssC (integer):</label>
+        <input type="number" id="NdssC" name="NdssC" step="1" required>
+
+        <label for="MLOGP">MLOGP (float):</label>
+        <input type="number" id="MLOGP" name="MLOGP" step="any" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <h3>
+        The predicted toxicity is: {{results}}
+    </h3>
+
+</body>
+</html>

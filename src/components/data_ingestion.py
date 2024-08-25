@@ -31,6 +31,7 @@ class DataIngestion:
         try:
             df=pd.read_csv('Notebooks\data\data_for_model_training.csv')
             df=df.drop('Unnamed: 0',axis=1)
+            df.rename(columns={'SM1_Dz(Z)':'SM1_DzZ'}, inplace=True)
             logging.info("Read the dataset as dataframe")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)

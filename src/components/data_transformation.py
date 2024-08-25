@@ -28,7 +28,7 @@ class DataTransformation:
         """
 
         try:
-            numerical_columns = ['CIC0', 'SM1_Dz(Z)', 'GATS1i', 'NdsCH',  'NdssC', 'MLOGP']
+            numerical_columns = ['CIC0', 'SM1_DzZ', 'GATS1i', 'NdsCH',  'NdssC', 'MLOGP']
 
             # Create a numerical pipeline
             num_pipeline = Pipeline(
@@ -59,7 +59,7 @@ class DataTransformation:
             preprocessing_obj=self.get_data_transformer_object()
 
             target_column_name="LC50"
-            numerical_columns=['CIC0', 'SM1_Dz(Z)', 'GATS1i', 'NdsCH',  'NdssC', 'MLOGP']
+            numerical_columns=['CIC0', 'SM1_DzZ', 'GATS1i', 'NdsCH',  'NdssC', 'MLOGP']
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
